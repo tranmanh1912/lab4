@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="show">
+            
+        </ul>
+    </div>
+</body>
+<script>
+var kq=document.getElementById("show")
+xulydiem("java nâng cao",ketqua)
+
+    function xulydiem(tenmon,callback){
+        var diem=prompt("Nhập điểm để kiểm tra");
+        diem=parseFloat(diem)
+        tenmon=tenmon.toUpperCase();
+        kq.innerHTML+="<h3>Môn học:"+tenmon+"</h3>";
+        kq.innerHTML+="<h4>Điểm:"+diem+"</h4>";
+        callback(diem,tenmon,thongbao);
+    }
+
+    function ketqua(diem,sub,call_back){ 
+        if(diem>=5) kq.innerHTML+="<p>Qua môn</p>";
+        else kq.innerHTML+="<p>Rớt môn</p>";
+        call_back(diem,sub)
+    }
+    function thongbao(d,sub){
+        if(d<5 ) kq.innerHTML+="<p>Rất tiếc bạn đã rớt môn</p>";
+            else if(d<=7.5) kq.innerHTML+="<p>Chúc mừng bạn đã qua môn</p>";
+            else kq.innerHTML+="<p>Bạn thật giỏi</p>";
+    }
+    
+</script>
+</html>

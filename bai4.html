@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">
+        
+    </div>
+    <script>
+        function thucday(tieptheo){
+            console.log("B1 :  Đã ngủ dậy");
+            tieptheo();
+        }
+        function danhrang(tieptheo){
+            console.log("B2 :  Đang đánh răng");
+            setTimeout(function(){
+                console.log("Đã đánh răng xong");
+                tieptheo();
+            },2000);
+        }
+        function thayquanao(tieptheo){
+            console.log("B2 :  Đang thay quần áo");
+            setTimeout(function(){
+                console.log("Đã thay quần áo xong");
+                tieptheo();
+            },3000);
+        }
+        function dihoc(tieptheo){
+            tieptheo();
+        }
+        // thucday(function(){
+        //     danhrang(function(){
+        //         thayquanao(function(){
+        //             dihoc(function(){
+        //                 console.log("B4 : đang di chuyển");
+        //                 setTimeout(function(){
+        //                     console.log("Đã đến trường");
+        //                 }, 4000);
+        //             });
+        //         });
+        //     });
+        // });
+        function sauthucday(){
+            danhrang(saudanhrang);
+        }
+        function saudanhrang(){
+            thayquanao(sauthayquanao);
+        }
+        function sauthayquanao(){
+            dihoc(saudihoc);
+        }
+        function saudihoc(){
+            console.log("B4 : đang di chuyển");
+            setTimeout(function(){
+                console.log("Đã đến trường");
+                 }, 4000);
+        }
+        thucday(sauthucday);
+    </script>
+</body>
+</html>

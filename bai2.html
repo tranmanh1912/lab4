@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">
+
+    </div>
+    <script>
+        var listsv = [
+            {ht : "Hoang Hai Dang" , diem : 10},
+            {ht : "Nguyen Hai Dang" , diem : 8},
+            {ht : "Le Hai Dang" , diem : 4},
+            {ht : "Ho Hai Dang" , diem : 6},
+            {ht : "Pham Hai Dang" , diem : 4.5},
+            
+        ]
+        var kq =  document.getElementById("output");
+        var sv_dau = listsv.filter(function(sv){
+            if(sv.diem <5){
+                return false;  
+            }else{
+                if(sv.diem >9){
+                kq.innerHTML += "<p>" + sv.ht +" Điểm : "+ sv.diem +" Học lực giỏi"+"</p>";
+                }else{
+                kq.innerHTML += "<p>" + sv.ht +" Điểm : "+ sv.diem +"</p>";    
+                }
+                
+                return true;
+            } 
+            
+        })
+    </script>
+</body>
+</html>

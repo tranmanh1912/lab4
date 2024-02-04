@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box puff-in-center">
+        <h1>Tính BMI</h1>
+        <form>
+            <input type="number" class="form-control" id="height" placeholder="Nhập chiều cao" />
+            <input type="number" class="form-control" id="weight" placeholder="Nhập cân nặng" />
+            <button id="button">Tính Toán</button>
+        </form>
+        <b id="show">
+
+        </b>
+    </div>
+    <script>
+        let button = document
+            .querySelector("#button")
+            .addEventListener("click", bmi);
+        function bmi(e) {
+            e.preventDefault();
+            let heightInput = document.querySelector("#height").value;
+            let weightInput = document.querySelector("#weight").value;
+            let height = heightInput * heightInput;
+            let bmi = (weightInput / height);
+            bmi = bmi.toFixed(10);
+            if (bmi < 18.5) {
+                document.querySelector('#show').innerText = "Chỉ số BMI của bạn là " + bmi + " Tình trạng :  Thiếu Cân";
+            } else if (bmi < 25) { 
+                document.querySelector('#show').innerText = "Chỉ số BMI của bạn là " + bmi + " Tình trạng :  Bình Thường";
+            } else if (bmi < 30) {
+                document.querySelector('#show').innerText = "Chỉ số BMI của bạn là " + bmi + " Tình trạng :  Thừa Cân";
+            } else {
+                document.querySelector('#show').innerText = "Chỉ số BMI của bạn là " + bmi + " Tình trạng :  Béo Phì";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
